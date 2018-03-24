@@ -65,19 +65,6 @@ module.exports = {
         'css-loader',
       ],
     }, {
-      test: /\.scss$/,
-      use: [
-        'style-loader',
-        'css-loader',
-        'resolve-url-loader',
-        {
-          loader: 'sass-loader',
-          options: {
-            includePaths: [path.resolve('./node_modules/foundation-sites/scss')],
-          },
-        },
-      ],
-    }, {
       test: /\.(png|jpe?g|gif|svg)/,
       use: [
         {
