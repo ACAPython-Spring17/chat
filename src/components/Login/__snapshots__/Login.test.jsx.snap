@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login should render correctly 1`] = `
+<div
+  className="grid-x align-center"
+>
+  <TextField
+    disabled={false}
+    errorText=""
+    floatingLabelFixed={false}
+    floatingLabelText="Username"
+    fullWidth={false}
+    hintText="Enter your username"
+    multiLine={false}
+    name="username"
+    onKeyPress={[Function]}
+    rows={1}
+    type="text"
+    underlineShow={true}
+  />
+</div>
+`;

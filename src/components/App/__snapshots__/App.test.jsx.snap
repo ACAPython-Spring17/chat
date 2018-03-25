@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App should render normally 1`] = `
-<div>
-  App
-</div>
+<MuiThemeProvider>
+  <div
+    className="grid-y grid-frame align-center"
+  >
+    <Login />
+  </div>
+</MuiThemeProvider>
 `;
