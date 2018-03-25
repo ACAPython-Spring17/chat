@@ -1,43 +1,79 @@
-# Chat
+# React Boilerplate
 
-## Project Initialization
+## Usage
 
-If you want to create a new project using React the following steps are basics
-that you should do.
+Close this repository under your app folder name, remove `.git` folder,
+rename `my-app` from `package.json` and start coding
 
-1. Create a project directory and initialize with `npm init`.
-2. Install the following dev dependencies:
 
 ```sh
-npm install --save-dev @babel/core @babel/plugin-proposal-class-properties \
-    @babel/preset-env @babel/preset-react \
-    webpack webpack-cli webpack-dev-server html-webpack-plugin babel-loader
-npm install react react-dom
+git clone --depth 1 https://github.com/mike1808/react-boilerplate.git my-awesome-app
+rm -rf my-awesome-app/.git
+sed -i -e s/my-app/my-awesome-app/g package.json
+npm install
 ```
 
-3. Create `webpack.config.js` like in this repo.
 
-4. Create `src/index.js` and `src/index.html` with HTML template
+## Folder Structure
 
-## Development
-
-To start development server do:
-
-```sh
-npm start
+```
+my-app
+├── package.json
+├── package-lock.json
+├── public
+│   ├── favicon.ico
+│   └── index.html
+├── README.md
+├── src
+│   ├── components
+│   │   └── App
+│   │       ├── App.jsx
+│   │       ├── App.test.jsx
+│   │       └── __snapshots__
+│   │           └── App.test.jsx.snap
+│   ├── index.jsx
+│   ├── resources
+│   │   ├── styles.css
+│   │   └── styles.scss
+│   └── setupTest.js
+└── webpack.config.js
 ```
 
-It will run `webpack-dev-server` which will start server which serves our
-`src/index.html` file with injected JS file.
+## Available Scripts
 
-To run linter do `npm run lint:fix` or `npm run lint`.
+### `npm start`
 
-## Build
+Runs the app in the development mode.
+Open http://localhost:8080 to view it in the browser.
 
-To build assets (files that you will serve on your server) do:
+The page will reload if you make edits.
+You will also see any lint errors in the console.
 
-```sh
-npm run build
-```
+### `npm test`
 
-It will create assets in `dist` folder.
+Launches the test runner
+
+### `npm run build`
+
+Builds the app for production to the build folder.
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.
+
+### `npm run format`
+
+Format your code according to our style guide
+
+
+### `npm run lint`
+
+Show linting errors
+
+### `npm run build-css`
+
+Build CSS files and put them near SCSS files
+
+
+### `npm run watch-css`
+
+Run build `build-css` in watch mode

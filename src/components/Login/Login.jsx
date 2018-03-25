@@ -41,6 +41,6 @@ class Login extends Component {
 
 Login.propTypes = {
   onLogin: PropTypes.func.isRequired,
-}
+};
 
 export default Login;

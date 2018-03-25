@@ -8,7 +8,4 @@ import './resources/styles.css';
 
 import App from './components/App/App';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root'),
-);
+ReactDOM.render(<App />, document.getElementById('root'));

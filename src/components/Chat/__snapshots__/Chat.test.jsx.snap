@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chat should render normally 1`] = `
+<div
+  className="grid-y grid-frame"
+>
+  <div
+    className="cell auto cell-block"
+  >
+    messages
+  </div>
+  <div
+    className="cell shrink"
+  >
+    new message input
+  </div>
+</div>
+`;

@@ -2,10 +2,8 @@
 
 exports[`App should render normally 1`] = `
 <MuiThemeProvider>
-  <div
-    className="grid-y grid-frame align-center"
-  >
-    <Login />
-  </div>
+  <BrowserRouter>
+    <withRouter(ChatApp) />
+  </BrowserRouter>
 </MuiThemeProvider>
 `;
