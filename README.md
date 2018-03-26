@@ -47,7 +47,7 @@ Try to create small components so they are easy to test.
 
 Under `/chat` you should create chat page. It will looks like this:
 
-![chat][github/chat.png]
+![chat](github/chat.png)
 
 You can think of that each colored box is separate component.
 
