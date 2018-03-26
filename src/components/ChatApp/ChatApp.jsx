@@ -12,25 +12,21 @@ class ChatApp extends Component {
   constructor(props) {
     super(props);
 
-    this.offConnect = chat.onConnect(this.handleConnect);
-
-    this.offLogin = chat.onLogin(() => {
-      props.history.push('/chat');
-    });
-
-    const username = getUsernameFromSession();
+    this.offChatConnect = chat.onConnect(this.handleChatConnect);
+    this.offChatLogin = chat.onLogin(this.handleChatLogin);
 
     this.state = {
-      username,
+      username: getUsernameFromSession(),
+      numUsers: 0,
     };
   }
 
   componentWillUnmount() {
-    this.offConnect();
-    this.offLogin();
+    this.offChatConnect();
+    this.offChatLogin();
   }
 
-  handleConnect = () => {
+  handleChatConnect = () => {
     if (this.state.username) {
       chat.addUser(this.state.username);
     } else {
@@ -38,23 +34,25 @@ class ChatApp extends Component {
     }
   };
 
+  handleChatLogin = ({ numUsers }) => {
+    this.setState({ numUsers }, () => this.props.history.push('/chat'));
+  };
+
   handleLogin = (username) => {
-    this.setState(
-      {
-        username,
-      },
-      () => chat.addUser(username),
-    );
+    this.setState({ username }, () => chat.addUser(username));
   };
 
   render() {
-    const { username } = this.state;
+    const { username, numUsers } = this.state;
 
     return (
       <div className="grid-y grid-frame align-center">
         <Switch>
           <Route path="/login" render={() => <Login onLogin={this.handleLogin} />} />
-          <Route path="/chat" render={() => <Chat username={username} />} />
+          <Route
+            path="/chat"
+            render={() => <Chat username={username} initialNumUsers={numUsers} />}
+          />
           <Route render={() => <CircularProgress />} />
         </Switch>
       </div>
@@ -67,5 +65,7 @@ ChatApp.propTypes = {
     push: PropTypes.func.isRequired,
   }).isRequired,
 };
+
+export { ChatApp };
 
 export default withRouter(ChatApp);

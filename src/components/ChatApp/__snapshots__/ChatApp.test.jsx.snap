@@ -1,7 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ChatApp should render normally 1`] = `
-<Route
-  render={[Function]}
-/>
+<div
+  className="grid-y grid-frame align-center"
+>
+  <Switch>
+    <Route
+      path="/login"
+      render={[Function]}
+    />
+    <Route
+      path="/chat"
+      render={[Function]}
+    />
+    <Route
+      render={[Function]}
+    />
+  </Switch>
+</div>
 `;
