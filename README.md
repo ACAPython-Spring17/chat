@@ -1,4 +1,5 @@
 # Chat
+------
 
 ## Available Scripts
 
